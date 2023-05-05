@@ -14,5 +14,5 @@ pyimgur
 mpl_finance 
 arrow
 yfinance 
-matplotlib.pyplot
+matplotlib
 pyfolio
