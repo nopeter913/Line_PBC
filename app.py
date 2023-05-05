@@ -1,4 +1,4 @@
-heroku buildpacks:set heroku/python
+heroku create myapp --buildpack heroku/python
 from flask import Flask, request, abort  
 from linebot import (
 　　LineBotApi, WebhookHandler
