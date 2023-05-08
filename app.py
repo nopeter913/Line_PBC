@@ -1,4 +1,3 @@
-# from flask_ngrok import run_with_ngrok
 from flask import Flask, request
 
 # 載入 LINE Message API 相關函式庫
@@ -13,7 +12,7 @@ import os
 app = Flask(__name__)
 
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["POST"])  # POST method 打/ end point才會走這個function
 def linebot():
     body = request.get_data(as_text=True)  # 取得收到的訊息內容
     try:
