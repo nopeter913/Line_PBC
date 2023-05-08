@@ -8,6 +8,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 # 載入 json 標準函式庫，處理回傳的資料格式
 import json
+import os 
 
 app = Flask(__name__)
 
@@ -29,6 +30,11 @@ def linebot():
     except:
         print(body)                                          # 如果發生錯誤，印出收到的內容
     return 'OK'                 # 驗證 Webhook 使用，不能省略
+
+@app.route('/test')
+def test():
+  return "This is test"
+
 if __name__ == "__main__":
-  run_with_ngrok(app)           # 串連 ngrok 服務
-  app.run()
+  port = int(os.environ.get('PORT', 5000))     
+　app.run(host='0.0.0.0', port=port)
